@@ -28,6 +28,7 @@ public class FormatPage {
 
         assembleColumns.setOnAssembledColumns(insertSeparatorColumns::setColumns);
         insertSeparatorColumns.setOnSeparatedColumns(assemblePage::setColumns);
+        assemblePage.setOnAssembledPage(onFormattedPage);
 
         assembleColumns.process();
         insertSeparatorColumns.process();
