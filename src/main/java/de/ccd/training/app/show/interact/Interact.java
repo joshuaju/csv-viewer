@@ -19,6 +19,17 @@ public class Interact {
 
     public void process() {
         System.out.println("interact");
+
+        var displayPage = new DisplayPage(console, formattedPage);
+        var displayMenu = new DisplayMenu(console);
+        var readUserInput = new ReadUserInput(console);
+
+        readUserInput.setOnReceivedInput(onUserInput);
+
+        displayPage.process();
+        displayMenu.process();
+        readUserInput.process();
+
     }
 
 }

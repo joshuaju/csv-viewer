@@ -7,5 +7,10 @@ import lombok.RequiredArgsConstructor;
 class DisplayPage {
 
     private final Console console;
+    private final String formattedPage;
+
+    public void process(){
+        System.out.println("display page");
+    }
 
 }

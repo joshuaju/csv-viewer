@@ -8,4 +8,7 @@ class DisplayMenu {
 
     private final Console console;
 
+    public void process() {
+        System.out.println("display menu");
+    }
 }
