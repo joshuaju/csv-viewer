@@ -18,6 +18,16 @@ class ParseRecords {
 
     public void process(){
         System.out.println("parse records (extract records)");
+
+        var convertLinesToRecords = new ConvertLinesToRecords(lines);
+        var splitIntoHeadlineAndData = new SplitIntoHeadlineAndData();
+
+        convertLinesToRecords.setOnRecords(splitIntoHeadlineAndData::setRecords);
+        splitIntoHeadlineAndData.setOnHeadline(onHeadLine);
+        splitIntoHeadlineAndData.setOnData(onData);
+
+        convertLinesToRecords.process();
+        splitIntoHeadlineAndData.process();
     }
 
 }
