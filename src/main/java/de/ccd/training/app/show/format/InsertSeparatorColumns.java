@@ -6,16 +6,17 @@ import lombok.Setter;
 import java.util.List;
 import java.util.function.Consumer;
 
-class AssemblePage {
+class InsertSeparatorColumns {
 
     @Setter
-    private Consumer<String> onAssembledPage;
+    private Consumer<List<Column>> onSeparatedColumns;
 
     @Setter
     private List<Column> columns;
 
-    public void process() {
-        System.out.println("assemble page");
+    public void process(){
+        System.out.println("insert separator columns");
     }
+
 
 }
