@@ -9,8 +9,9 @@ class DisplayPage {
     private final Console console;
     private final String formattedPage;
 
-    public void process(){
+    public void process() {
         System.out.println("display page");
+        console.display(formattedPage + "\n");
     }
 
 }

@@ -29,6 +29,7 @@ public class Interact {
         displayPage.process();
         displayMenu.process();
         readUserInput.process();
+        console.display("\n");
 
     }
 

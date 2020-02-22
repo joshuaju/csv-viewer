@@ -10,5 +10,6 @@ class DisplayMenu {
 
     public void process() {
         System.out.println("display menu");
+        console.display("F(irst, L(ast, N(ext, P(rev, eX(it: ");
     }
 }

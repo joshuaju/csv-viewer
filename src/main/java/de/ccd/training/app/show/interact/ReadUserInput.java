@@ -16,5 +16,7 @@ class ReadUserInput {
 
     public void process() {
         System.out.println("read user input");
+        char key = console.readKey();
+        onReceivedInput.accept(key);
     }
 }
