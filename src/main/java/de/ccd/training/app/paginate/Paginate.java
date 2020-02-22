@@ -1,11 +1,25 @@
 package de.ccd.training.app.paginate;
 
 import de.ccd.training.adapter.PageStore;
-import lombok.RequiredArgsConstructor;
+import de.ccd.training.data.Record;
+import lombok.Setter;
 
-@RequiredArgsConstructor
+import java.util.List;
+
 public class Paginate {
 
-    private final PageStore pageStore;
+    @Setter
+    private List<Record> data;
+    @Setter
+    private Integer pageLength;
 
+    private PageStore pageStore;
+
+    public Paginate(PageStore pageStore) {
+        this.pageStore = pageStore;
+    }
+
+    public void process() {
+        System.out.println("paginate");
+    }
 }
