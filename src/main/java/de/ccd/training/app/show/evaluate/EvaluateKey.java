@@ -2,23 +2,25 @@ package de.ccd.training.app.show.evaluate;
 
 import de.ccd.training.data.Page;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+@RequiredArgsConstructor
 public class EvaluateKey {
 
     @Setter
-    private Runnable onExit;
+    private final Runnable onExit;
     @Setter
-    private Runnable onFirstPage;
+    private final Runnable onFirstPage;
     @Setter
-    private Runnable onPreviousPage;
+    private final Runnable onPreviousPage;
     @Setter
-    private Runnable onNextPage;
+    private final Runnable onNextPage;
     @Setter
-    private Runnable onLastPage;
+    private final Runnable onLastPage;
 
     @Setter
     @Getter

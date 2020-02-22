@@ -32,13 +32,13 @@ public class ShowPage {
 
         var formatPage = new FormatPage(header);
         var interact = new Interact(console);
-        var evaluateKey = new EvaluateKey();
-
-        evaluateKey.setOnExit(exitCSVViewer::process);
-        evaluateKey.setOnFirstPage(selectFirstPage::process);
-        evaluateKey.setOnNextPage(selectNextPage::process);
-        evaluateKey.setOnPreviousPage(selectPreviousPage::process);
-        evaluateKey.setOnLastPage(selectLastPage::process);
+        var evaluateKey = new EvaluateKey(
+                exitCSVViewer::process,
+                selectFirstPage::process,
+                selectPreviousPage::process,
+                selectNextPage::process,
+                selectLastPage::process
+        );
         evaluateKey.setOnPageSelected(formatPage::setPage);
 
         selectFirstPage.setOnPageSelected(evaluateKey.getOnPageSelected());
