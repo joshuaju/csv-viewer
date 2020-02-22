@@ -18,7 +18,14 @@ class ParseArguments {
         this.args = args;
     }
 
-    public void process(){
+    public void process() {
         System.out.println("parse arguments");
+
+        String path = args[0];
+        onPath.accept(Path.of(path));
+
+        int pageLength = 5;
+        if (args.length > 1) pageLength = Integer.parseInt(args[1]);
+        onPageLength.accept(pageLength);
     }
 }

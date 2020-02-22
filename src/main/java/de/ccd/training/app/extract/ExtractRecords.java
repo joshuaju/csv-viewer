@@ -2,12 +2,16 @@ package de.ccd.training.app.extract;
 
 import de.ccd.training.adapter.FileSystem;
 import de.ccd.training.data.Record;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 import java.util.function.Consumer;
 
+@RequiredArgsConstructor
 public class ExtractRecords {
+
+    private final FileSystem fileSystem;
 
     @Setter
     private Consumer<Record> onHeadLine;
@@ -16,13 +20,8 @@ public class ExtractRecords {
     @Setter
     private Consumer<Integer> onPageLength;
 
+    @Setter
     private String[] args;
-    private FileSystem fileSystem;
-
-    public ExtractRecords(String[] args, FileSystem fileSystem) {
-        this.args = args;
-        this.fileSystem = fileSystem;
-    }
 
     public void process() {
         System.out.println("extract records");

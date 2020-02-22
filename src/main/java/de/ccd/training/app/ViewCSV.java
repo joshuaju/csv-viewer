@@ -19,13 +19,14 @@ public class ViewCSV {
         FileSystem fileSystem = new FileSystemImpl();
         PageStore pageStore = new PageStoreImpl();
 
-        var extractRecords = new ExtractRecords(args, fileSystem);
+        var extractRecords = new ExtractRecords(fileSystem);
         var paginate = new Paginate(pageStore);
         var showPage = new ShowPage(console, pageStore);
 
         extractRecords.setOnHeadLine(showPage::setHeader);
         extractRecords.setOnData(paginate::setData);
         extractRecords.setOnPageLength(paginate::setPageLength);
+        extractRecords.setArgs(args);
 
         extractRecords.process();
         paginate.process();

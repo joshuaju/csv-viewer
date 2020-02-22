@@ -19,8 +19,10 @@ class ReadFile {
     @Setter
     private Path path;
 
-    public void process(){
+    public void process() {
         System.out.println("read file");
+        var lines = fs.readLines(path);
+        onLines.accept(lines);
     }
 
 }
