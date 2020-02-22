@@ -1,5 +1,6 @@
 package de.ccd.training.app.show.format.columns;
 
+import de.ccd.training.app.show.format.columns.padding.InsertPadding;
 import de.ccd.training.data.Column;
 import de.ccd.training.data.Page;
 import de.ccd.training.data.Record;
@@ -18,8 +19,20 @@ public class AssembleColumns {
     @Setter
     private Consumer<List<Column>> onAssembledColumns;
 
-    public void process(){
-        System.out.println("assemble process");
+    public void process() {
+        System.out.println("assemble columns");
+
+        var convertToColumns = new ConvertToColumns(header, page);
+        var insertPadding = new InsertPadding();
+        var insertUnderline = new InsertUnderline();
+
+        convertToColumns.setOnConverted(insertPadding::setColumns);
+        insertPadding.setOnPaddedColumns(insertUnderline::setColumns);
+        insertUnderline.setOnUnderlinedColumns(onAssembledColumns);
+
+        convertToColumns.process();
+        insertPadding.process();
+        insertUnderline.process();
     }
 
 }
