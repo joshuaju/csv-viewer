@@ -14,6 +14,7 @@ public class ViewCSV {
     }
 
     public void process() {
+        System.out.println("view csv");
         Console console = new ConsoleImpl();
         FileSystem fileSystem = new FileSystemImpl();
         PageStore pageStore = new PageStoreImpl();

@@ -26,5 +26,18 @@ public class ExtractRecords {
 
     public void process() {
         System.out.println("extract records");
+        var parseArguments = new ParseArguments(args);
+        var readFile = new ReadFile(fileSystem);
+        var parseRecords = new ParseRecords(); // "extract records" in flow diagram
+
+        parseArguments.setOnPath(readFile::setPath);
+        parseArguments.setOnPageLength(onPageLength);
+        readFile.setOnLines(parseRecords::setLines);
+        parseRecords.setOnHeadLine(onHeadLine);
+        parseRecords.setOnData(onData);
+
+        parseArguments.process();
+        readFile.process();
+        parseRecords.process();
     }
 }
