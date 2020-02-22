@@ -1,5 +1,8 @@
 package de.ccd.training.app.show.evaluate;
 
-class ExitCSVViewer {
+public class ExitCSVViewer {
 
+    public void process() {
+        System.out.println("exist csv viewer");
+    }
 }
