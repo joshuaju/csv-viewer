@@ -34,15 +34,18 @@ public class ShowPage {
         var interact = new Interact(console);
         var evaluateKey = new EvaluateKey();
 
-        selectFirstPage.setOnPageSelected(formatPage::setPage);
-        selectNextPage.setOnPageSelected(formatPage::setPage);
-        selectPreviousPage.setOnPageSelected(formatPage::setPage);
-        selectLastPage.setOnPageSelected(formatPage::setPage);
         evaluateKey.setOnExit(exitCSVViewer::process);
         evaluateKey.setOnFirstPage(selectFirstPage::process);
         evaluateKey.setOnNextPage(selectNextPage::process);
         evaluateKey.setOnPreviousPage(selectPreviousPage::process);
         evaluateKey.setOnLastPage(selectLastPage::process);
+        evaluateKey.setOnPageSelected(formatPage::setPage);
+
+        selectFirstPage.setOnPageSelected(evaluateKey.getOnPageSelected());
+        selectNextPage.setOnPageSelected(evaluateKey.getOnPageSelected());
+        selectPreviousPage.setOnPageSelected(evaluateKey.getOnPageSelected());
+        selectLastPage.setOnPageSelected(evaluateKey.getOnPageSelected());
+
         formatPage.setOnFormattedPage(interact::setFormattedPage);
         interact.setOnUserInput(evaluateKey::setKey);
 

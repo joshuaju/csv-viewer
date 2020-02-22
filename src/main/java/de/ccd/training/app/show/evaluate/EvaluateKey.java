@@ -1,6 +1,11 @@
 package de.ccd.training.app.show.evaluate;
 
+import de.ccd.training.data.Page;
+import lombok.Getter;
 import lombok.Setter;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class EvaluateKey {
 
@@ -14,6 +19,10 @@ public class EvaluateKey {
     private Runnable onNextPage;
     @Setter
     private Runnable onLastPage;
+
+    @Setter
+    @Getter
+    private Consumer<Page> onPageSelected;
 
     @Setter
     private Character key;
