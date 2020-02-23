@@ -23,15 +23,12 @@ public class FormatPage {
         System.out.println("format page");
 
         var assembleColumns = new AssembleColumns(header, page);
-        var insertSeparatorColumns = new InsertSeparatorColumns(); // push down to "assemble columns"?
         var assemblePage = new AssemblePage();
 
-        assembleColumns.setOnAssembledColumns(insertSeparatorColumns::setColumns);
-        insertSeparatorColumns.setOnSeparatedColumns(assemblePage::setColumns);
+        assembleColumns.setOnAssembledColumns(assemblePage::setColumns);
         assemblePage.setOnAssembledPage(onFormattedPage);
 
         assembleColumns.process();
-        insertSeparatorColumns.process();
         assemblePage.process();
     }
 

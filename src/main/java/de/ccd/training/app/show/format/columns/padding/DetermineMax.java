@@ -16,5 +16,9 @@ class DetermineMax {
 
     public void process() {
         System.out.println("determine max");
+        column.getCells().stream()
+                .map(String::length)
+                .max(Integer::compareTo)
+                .ifPresent(onMaxColumnWidth);
     }
 }

@@ -12,10 +12,8 @@ public class SelectLastPage {
 
     private final PageStore pageStore;
 
-    @Setter
-    private Consumer<Page> onPageSelected;
-
-    public void process() {
+    public Page process() {
         System.out.println("select last page");
+        return null;
     }
 }

@@ -25,14 +25,17 @@ public class AssembleColumns {
         var convertToColumns = new ConvertToColumns(header, page);
         var insertPadding = new InsertPadding();
         var insertUnderline = new InsertUnderline();
+        var insertSeparatorColumns = new InsertSeparatorColumns();
 
         convertToColumns.setOnConverted(insertPadding::setColumns);
         insertPadding.setOnPaddedColumns(insertUnderline::setColumns);
-        insertUnderline.setOnUnderlinedColumns(onAssembledColumns);
+        insertUnderline.setOnUnderlinedColumns(insertSeparatorColumns::setColumns);
+        insertSeparatorColumns.setOnSeparatedColumns(onAssembledColumns);
 
         convertToColumns.process();
         insertPadding.process();
         insertUnderline.process();
+        insertSeparatorColumns.process(); // pulled down from format page (see flow diagram)
     }
 
 }

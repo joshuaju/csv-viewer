@@ -12,10 +12,9 @@ public class SelectPreviousPage {
 
     private final PageStore pageStore;
 
-    @Setter
-    private Consumer<Page> onPageSelected;
 
-    public void process() {
+    public Page process() {
         System.out.println("select previous page");
+        return null;
     }
 }

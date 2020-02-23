@@ -11,19 +11,13 @@ import java.util.function.Supplier;
 @RequiredArgsConstructor
 public class EvaluateKey {
 
-    @Setter
     private final Runnable onExit;
-    @Setter
-    private final Runnable onFirstPage;
-    @Setter
-    private final Runnable onPreviousPage;
-    @Setter
-    private final Runnable onNextPage;
-    @Setter
-    private final Runnable onLastPage;
+    private final Supplier<Page> onFirstPage;
+    private final Supplier<Page> onPreviousPage;
+    private final Supplier<Page> onNextPage;
+    private final Supplier<Page> onLastPage;
 
     @Setter
-    @Getter
     private Consumer<Page> onPageSelected;
 
     @Setter
@@ -31,6 +25,28 @@ public class EvaluateKey {
 
     public void process() {
         System.out.println("evaluate key");
+        switch (key) {
+            case 'x':
+            case 'X':
+                onExit.run();
+                break;
+            case 'f':
+            case 'F':
+                onPageSelected.accept(onFirstPage.get());
+                break;
+            case 'p':
+            case 'P':
+                onPageSelected.accept(onPreviousPage.get());
+                break;
+            case 'n':
+            case 'N':
+                onPageSelected.accept(onNextPage.get());
+                break;
+            case 'l':
+            case 'L':
+                onPageSelected.accept(onLastPage.get());
+                break;
+        }
     }
 
 }

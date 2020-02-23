@@ -41,11 +41,6 @@ public class ShowPage {
         );
         evaluateKey.setOnPageSelected(formatPage::setPage);
 
-        selectFirstPage.setOnPageSelected(evaluateKey.getOnPageSelected());
-        selectNextPage.setOnPageSelected(evaluateKey.getOnPageSelected());
-        selectPreviousPage.setOnPageSelected(evaluateKey.getOnPageSelected());
-        selectLastPage.setOnPageSelected(evaluateKey.getOnPageSelected());
-
         formatPage.setOnFormattedPage(interact::setFormattedPage);
         interact.setOnUserInput(evaluateKey::setKey);
 
