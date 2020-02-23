@@ -1,7 +1,6 @@
 package de.ccd.training.app.show.evaluate;
 
 import de.ccd.training.data.Page;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 

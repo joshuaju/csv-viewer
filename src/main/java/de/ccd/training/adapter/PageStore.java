@@ -8,7 +8,11 @@ public interface PageStore {
 
     void store(List<Page> pages);
 
+    int getPageCount();
+
     void setActivePage(int pageIndex);
+
+    int getActivePageIndex();
 
     Page getActivePage();
 }

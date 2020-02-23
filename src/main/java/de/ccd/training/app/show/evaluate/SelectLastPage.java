@@ -3,9 +3,6 @@ package de.ccd.training.app.show.evaluate;
 import de.ccd.training.adapter.PageStore;
 import de.ccd.training.data.Page;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-
-import java.util.function.Consumer;
 
 @RequiredArgsConstructor
 public class SelectLastPage {
@@ -14,6 +11,7 @@ public class SelectLastPage {
 
     public Page process() {
         System.out.println("select last page");
-        return null;
+        pageStore.setActivePage(pageStore.getPageCount() - 1);
+        return pageStore.getActivePage();
     }
 }
