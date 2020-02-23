@@ -18,8 +18,6 @@ public class Interact {
     private String formattedPage;
 
     public void process() {
-        System.out.println("interact");
-
         var displayPage = new DisplayPage(console, formattedPage);
         var displayMenu = new DisplayMenu(console);
         var readUserInput = new ReadUserInput(console);

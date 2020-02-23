@@ -10,7 +10,6 @@ public class SelectFirstPage {
     private final PageStore pageStore;
 
     public Page process() {
-        System.out.println("select first page");
         pageStore.setActivePage(0);
         return pageStore.getActivePage();
     }

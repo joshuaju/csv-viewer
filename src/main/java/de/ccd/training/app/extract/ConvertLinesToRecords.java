@@ -18,7 +18,6 @@ class ConvertLinesToRecords {
     private Consumer<List<Record>> onRecords;
 
     public void process() {
-        System.out.println("convert lines to records");
         var records = lines.stream()
                 .map(line -> line.split(";"))
                 .map(values -> new Record(Arrays.asList(values)))

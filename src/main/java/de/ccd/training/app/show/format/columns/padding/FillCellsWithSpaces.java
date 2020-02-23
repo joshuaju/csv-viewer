@@ -20,7 +20,6 @@ class FillCellsWithSpaces {
     private Integer cellStringLength;
 
     public void process() {
-        System.out.println("fill cells with spaces");
         List<String> values = column.getCells().stream()
                 .map(this::fillWithSpaces)
                 .collect(Collectors.toList());

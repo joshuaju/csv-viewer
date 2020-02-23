@@ -10,7 +10,6 @@ class DisplayPage {
     private final String formattedPage;
 
     public void process() {
-        System.out.println("display page");
         console.display(formattedPage + "\n");
     }
 

@@ -22,7 +22,6 @@ class ConvertToColumns {
     private Consumer<List<Column>> onConverted;
 
     public void process() {
-        System.out.println("convert to columns");
         var headerValues = header.getValues();
         var columns = page.getColumns();
 

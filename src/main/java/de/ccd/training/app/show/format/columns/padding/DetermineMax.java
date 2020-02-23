@@ -15,7 +15,6 @@ class DetermineMax {
     private Consumer<Integer> onMaxColumnWidth;
 
     public void process() {
-        System.out.println("determine max");
         column.getCells().stream()
                 .map(String::length)
                 .max(Integer::compareTo)

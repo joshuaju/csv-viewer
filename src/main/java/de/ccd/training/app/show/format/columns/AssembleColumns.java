@@ -20,8 +20,6 @@ public class AssembleColumns {
     private Consumer<List<Column>> onAssembledColumns;
 
     public void process() {
-        System.out.println("assemble columns");
-
         var convertToColumns = new ConvertToColumns(header, page);
         var insertPadding = new InsertPadding();
         var insertUnderline = new InsertUnderline();

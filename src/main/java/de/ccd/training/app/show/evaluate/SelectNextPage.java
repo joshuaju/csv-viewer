@@ -11,7 +11,6 @@ public class SelectNextPage {
 
 
     public Page process() {
-        System.out.println("select next page");
         int nextIndex = pageStore.getActivePageIndex() + 1 % pageStore.getPageCount();
         pageStore.setActivePage(nextIndex);
         return pageStore.getActivePage();

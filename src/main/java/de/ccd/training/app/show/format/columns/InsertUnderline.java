@@ -17,7 +17,6 @@ class InsertUnderline {
     private Consumer<List<Column>> onUnderlinedColumns;
 
     public void process() {
-        System.out.println("insert underline");
         var underlinedColumns = columns.stream().map(this::underline).collect(Collectors.toList());
         onUnderlinedColumns.accept(underlinedColumns);
     }

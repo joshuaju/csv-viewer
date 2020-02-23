@@ -22,8 +22,6 @@ public class ShowPage {
     }
 
     public void process() {
-        System.out.println("show page");
-
         var exitCSVViewer = new ExitCSVViewer();
         var selectFirstPage = new SelectFirstPage(pageStore);
         var selectNextPage = new SelectNextPage(pageStore);
@@ -44,7 +42,7 @@ public class ShowPage {
         formatPage.setOnFormattedPage(interact::setFormattedPage);
         interact.setOnUserInput(evaluateKey::setKey);
 
-        selectFirstPage.process();
+        formatPage.setPage(selectFirstPage.process()); // mh...
         formatPage.process();
         interact.process();
         evaluateKey.process();

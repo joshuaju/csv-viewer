@@ -19,7 +19,6 @@ class ParseArguments {
     }
 
     public void process() {
-        System.out.println("parse arguments");
 
         String path = args[0];
         onPath.accept(Path.of(path));

@@ -20,8 +20,6 @@ public class FormatPage {
     private Page page;
 
     public void process() {
-        System.out.println("format page");
-
         var assembleColumns = new AssembleColumns(header, page);
         var assemblePage = new AssemblePage();
 

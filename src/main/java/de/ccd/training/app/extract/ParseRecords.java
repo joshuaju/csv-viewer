@@ -17,7 +17,6 @@ class ParseRecords {
     private List<String> lines;
 
     public void process(){
-        System.out.println("parse records (extract records)");
 
         var convertLinesToRecords = new ConvertLinesToRecords(lines);
         var splitIntoHeadlineAndData = new SplitIntoHeadlineAndData();

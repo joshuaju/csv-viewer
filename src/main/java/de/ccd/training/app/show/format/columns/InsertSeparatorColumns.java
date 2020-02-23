@@ -17,7 +17,6 @@ class InsertSeparatorColumns {
     private List<Column> columns;
 
     public void process() {
-        System.out.println("insert separator columns");
         var separator = createSeparatorColum(columns);
         ArrayList<Column> separatedColumns = new ArrayList<>();
         var columnIterator = columns.iterator();

@@ -23,7 +23,6 @@ public class EvaluateKey {
     private Character key;
 
     public void process() {
-        System.out.println("evaluate key");
         switch (key) {
             case 'x':
             case 'X':

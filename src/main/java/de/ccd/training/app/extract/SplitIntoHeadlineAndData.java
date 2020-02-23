@@ -18,7 +18,6 @@ class SplitIntoHeadlineAndData {
     private Consumer<List<Record>> onData;
 
     public void process() {
-        System.out.println("split intro headline and data");
         assert records.size() >= 2;
         onHeadline.accept(records.get(0));
         onData.accept(records.subList(1, records.size()));

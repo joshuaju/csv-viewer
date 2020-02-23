@@ -24,7 +24,6 @@ public class ExtractRecords {
     private String[] args;
 
     public void process() {
-        System.out.println("extract records");
         var parseArguments = new ParseArguments(args);
         var readFile = new ReadFile(fileSystem);
         var parseRecords = new ParseRecords(); // "extract records" in flow diagram

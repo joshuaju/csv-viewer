@@ -20,7 +20,6 @@ class ReadFile {
     private Path path;
 
     public void process() {
-        System.out.println("read file");
         var lines = fs.readLines(path);
         onLines.accept(lines);
     }

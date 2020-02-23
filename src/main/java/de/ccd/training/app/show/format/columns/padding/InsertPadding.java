@@ -18,7 +18,6 @@ public class InsertPadding {
     private List<Column> paddedColumns = new ArrayList<>();
 
     public void process() {
-        System.out.println("insert padding");
         columns.forEach(this::processEach);
         onPaddedColumns.accept(paddedColumns);
     }

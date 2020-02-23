@@ -11,7 +11,6 @@ public class SelectPreviousPage {
 
 
     public Page process() {
-        System.out.println("select previous page");
         int activeIndex = pageStore.getActivePageIndex();
         int previousIndex = activeIndex - 1;
         if (activeIndex == 0) {

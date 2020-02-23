@@ -15,7 +15,22 @@ class AssemblePage {
     private List<Column> columns;
 
     public void process() {
-        System.out.println("assemble page");
+        int numberOfRows = rowCount(columns);
+
+        StringBuilder pageBuilder = new StringBuilder();
+        for (int currentRow = 0; currentRow < numberOfRows; currentRow++) {
+            int finalCurrentRow = currentRow;
+            columns.stream()
+                    .map(column -> column.getCells().get(finalCurrentRow))
+                    .forEach(pageBuilder::append);
+            pageBuilder.append("\n");
+        }
+        onAssembledPage.accept(pageBuilder.toString());
+    }
+
+    private int rowCount(List<Column> columns) {
+        var sampleColumn = columns.get(0);
+        return sampleColumn.getCells().size();
     }
 
 }
